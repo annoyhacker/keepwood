@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profile Card</title>
+  <title>Responsive Navbar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
@@ -24,214 +25,114 @@
       top: 0;
       left: 0;
       width: 100%;
+      height: 70px;
       background: rgba(247, 249, 252, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      padding: 0 30px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .logo {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: bold;
       color: #0077cc;
     }
 
-    .nav-links {
+    .desktop-links {
       list-style: none;
       display: flex;
+      gap: 30px;
     }
 
-    .nav-links li {
-      margin-left: 20px;
-    }
-
-    .nav-links a {
+    .desktop-links li a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
-    }
-
-    .nav-links a.active {
-      color: #0077cc;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #009cff, #00c2a8);
-      padding: 100px 20px 60px; /* extra top padding to avoid overlap with navbar */
-    }
-
-    .hero-heading {
-      text-align: center;
-      color: white;
-      max-width: 900px;
-      margin-bottom: 40px;
-    }
-
-    .hero-heading h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero-heading .highlight {
-      color: #75f5c5;
-    }
-
-    .hero-heading p {
-      margin: 20px auto;
-      max-width: 750px;
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
-    /* Image Card Wrapper */
-    .image-card-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 650px;
-      width: 100%;
-      padding: 20px;
-      border-radius: 20px;
-      background: none;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .image-card {
-      background: linear-gradient(135deg, #42bff5, #6be8c4);
-      border-radius: 18px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .profile-pic {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 0;
-    }
-
-    /* Caption inside the image card */
-    .caption-inside {
-      padding: 16px;
-      text-align: center;
-      color: white;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .caption-inside p:first-child {
-      font-weight: 600;
-    }
-
-    /* Caption outside the card */
-    .caption-outside {
-      margin-top: 25px;
-      text-align: center;
-      color: white;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .caption-outside p:first-child {
-      font-weight: 700;
       font-size: 1.1rem;
     }
 
-     .button-group {
-        margin-top: 40px;
-      margin-bottom: 50px;
-      
+    .desktop-links li a.active {
+      color: #0077cc;
     }
 
-    .button-group button {
-      margin: 10px;
-      padding: 18px 60px;
-      font-size: 20px;
-      border-radius: 8px;
-      border: 2px solid white;
+    /* Hamburger Icon */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #0077cc;
       cursor: pointer;
-      transition: all 0.3s ease;
-      gap: 40px;
+      z-index: 1101;
     }
 
-    .primary {
-      background-color: white;
-      color: #007bff;
-    }
-
-    .outlined {
-      background-color: transparent;
-      color: rgb(255, 255, 255);
-    }
-
-    .outlined:hover {
-      background-color: rgba(255,255,255,0.1);
-    }
-    .button-group button i {
-  margin-left: 10px;  /* 👈 This adds space between the text and icon */
-  font-size: 16px;
-  vertical-align: middle;
-}
-
-
-    .stats {
+    /* Mobile Menu */
+    .mobile-menu {
       display: flex;
-      justify-content: center;
-      gap: 150px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+      flex-direction: column;
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(247, 249, 252, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 30px 20px;
+      gap: 20px;
+      transition: left 0.3s ease-in-out;
+      z-index: 1100;
     }
 
-    .stat-item {
-      text-align: center;
+    .mobile-menu.open {
+      left: 0;
     }
 
-    .stat-icon {
-      font-size: 25px;
-      color: #a7f3d0;
-      margin-bottom: 10px;
+    .mobile-menu li a {
+      font-size: 1.2rem;
+      color: #333;
+      text-decoration: none;
     }
 
-    .stat-value {
-      font-size: 35px;
-      font-weight: bold;
-      color: white;
+    .mobile-menu li a.active {
+      color: #0077cc;
     }
 
-    .stat-label {
-      font-size: 18px;
-      color: #e0f2fe;
+    @media (max-width: 768px) {
+      .desktop-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
-
-        .stat-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* space between icon and value */
-  margin-bottom: 8px;
-}
-
-
   </style>
 </head>
+
 <body>
-  <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <div class="logo">Kofi Wood</div>
-      <ul class="nav-links">
+      <div class="logo">KAPISH RAWAT</div>
+
+      <!-- Hamburger Button -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!-- Desktop Nav -->
+      <ul class="desktop-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Mobile Nav -->
+      <ul class="mobile-menu" id="mobile-menu">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
@@ -242,59 +143,26 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-heading">
-      <h1>AI Product Manager & <span class="highlight">UX Specialist</span></h1>
-      <p>
-        Product Manager focused on AI and Machine Learning, specializing in rapid pilot development,
-        data-driven architecture recommendations, and scalable AI solutions that drive cross-functional
-        alignment and measurable impact.
-      </p>
-    </div>
-
-    <!-- Image Card -->
-    <div class="image-card-wrapper">
-      <div class="image-card">
-        <img src="./images/image_1750439240171-DlPGymdx.png" alt="Profile Photo" class="profile-pic" />
-        
-      </div>
-      <div class="caption-outside">
-      <p><strong>Product Manager | AI Product Manager | UX Designer</strong></p>
-      <p>User Experience MS, Arizona State University</p>
-    </div>
-    </div>
-
-<div class="button-group">
-    <button class="primary">View My Projects <i class="fas fa-arrow-right"></i></button>
-    <button class="outlined">Visit My UX Portfolio <i class="fas fa-arrow-right"></i></button>
-    <button class="outlined">Get In Touch</button>
+  <!-- Content placeholder -->
+  <div style="padding-top: 100px; text-align: center;">
+    <h1>Welcome to My Portfolio</h1>
+    <p>This is a sample page.</p>
   </div>
 
-<div class="stats">
-  <div class="stat-item">
-    <div class="stat-header">
-      <div class="stat-icon"><i class="fas fa-users"></i></div>
-      <div class="stat-value">500K+</div>
-    </div>
-    <div class="stat-label">Users Supported</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-header">
-      <div class="stat-icon"><i class="fas fa-rocket"></i></div>
-      <div class="stat-value">6</div>
-    </div>
-    <div class="stat-label">AI Products Built</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-header">
-      <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
-      <div class="stat-value">200K+</div>
-    </div>
-    <div class="stat-label">ASU Platform Users</div>
-  </div>
-</div>
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  </section>
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Optional: Close menu on link click
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>

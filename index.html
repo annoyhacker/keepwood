@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Profile Card</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
 
   <style>
     * {
@@ -16,6 +18,7 @@
 
     body {
       background: #e0f7ff;
+        font-family: 'Inter', sans-serif;
     }
 
     /* Navbar */
@@ -24,6 +27,7 @@
       top: 0;
       left: 0;
       width: 100%;
+      height: 70px;
       background: rgba(247, 249, 252, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
@@ -32,10 +36,11 @@
       align-items: center;
       padding: 15px 30px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      
     }
 
     .logo {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: bold;
       color: #0077cc;
     }
@@ -43,10 +48,13 @@
     .nav-links {
       list-style: none;
       display: flex;
+      gap: 30px;
+      padding-right: 50px; /* ← add this line */
     }
 
     .nav-links li {
       margin-left: 20px;
+      font-size: 1.1rem;
     }
 
     .nav-links a {
@@ -73,14 +81,16 @@
     .hero-heading {
       text-align: center;
       color: white;
-      max-width: 900px;
       margin-bottom: 40px;
     }
 
     .hero-heading h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
+     text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 54px;
+      margin-top: 50px;
+      color: white;
+      font-weight: 700;;
     }
 
     .hero-heading .highlight {
@@ -89,9 +99,11 @@
 
     .hero-heading p {
       margin: 20px auto;
-      max-width: 750px;
+      max-width: 900px;
       font-size: 1.2rem;
-      line-height: 1.6;
+      line-height:1.2;
+      letter-spacing: 2px;
+      
     }
 
     /* Image Card Wrapper */
@@ -180,7 +192,7 @@
       background-color: rgba(255,255,255,0.1);
     }
     .button-group button i {
-  margin-left: 10px;  /* 👈 This adds space between the text and icon */
+  margin-left: 10px;  
   font-size: 16px;
   vertical-align: middle;
 }
@@ -223,6 +235,91 @@
   margin-bottom: 8px;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0 0 0;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .hero-heading h1 {
+    font-size: 34px;
+  }
+
+  .hero-heading p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .image-card-wrapper {
+    padding: 15px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-group button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 10px;
+  }
+
+  .stat-icon {
+    font-size: 20px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading h1 {
+    font-size: 26px;
+  }
+
+  .hero-heading p {
+    font-size: 0.95rem;
+  }
+
+  .button-group button {
+    font-size: 15px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+}
+
 
   </style>
 </head>
@@ -230,7 +327,7 @@
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <div class="logo">Kofi Wood</div>
+      <div class="logo">KAPISH RAWAT</div>
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -256,12 +353,12 @@
     <!-- Image Card -->
     <div class="image-card-wrapper">
       <div class="image-card">
-        <img src="./images/image_1750439240171-DlPGymdx.png" alt="Profile Photo" class="profile-pic" />
+        <img src="./images/Media.jpeg" alt="Profile Photo" class="profile-pic" />
         
       </div>
       <div class="caption-outside">
-      <p><strong>Product Manager | AI Product Manager | UX Designer</strong></p>
-      <p>User Experience MS, Arizona State University</p>
+      <p><strong>Software Development | AI Automation | UX Designer</strong></p>
+      <p> Experience SYMB-Technologies, UBTER University</p>
     </div>
     </div>
 
