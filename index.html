@@ -16,7 +16,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
   <style>
     * {
       margin: 0;
@@ -25,395 +26,65 @@
     }
 
     body {
-      background: #e0f7ff;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      background: rgba(247, 249, 252, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #0077cc;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      padding-right: 50px;
-    }
-
-    .nav-links li {
-      font-size: 1.1rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .nav-links a.active {
-      color: #0077cc;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #009cff, #00c2a8);
-      padding: 100px 20px 60px;
-    }
-
-    .hero-heading h1 {
-      text-align: center;
-      font-size: 54px;
-      margin-top: 50px;
-      color: white;
-      font-weight: 700;
-    }
-
-    .hero-heading .highlight {
-      color: #75f5c5;
-    }
-
-    .hero-heading p {
-      margin: 20px auto;
-      max-width: 900px;
-      font-size: 1.2rem;
-      line-height: 1.5;
-      text-align: center;
-      color: white;
-    }
-
-    /* Image Card */
-    .image-card-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 650px;
-      width: 100%;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-      background: none;
-    }
-
-    .image-card {
-      background: linear-gradient(135deg, #42bff5, #6be8c4);
-      border-radius: 18px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .profile-pic {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .caption-outside {
-      margin-top: 25px;
-      text-align: center;
-      color: white;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .caption-outside p:first-child {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    /* Buttons */
-    .button-group {
-      margin-top: 40px;
-      margin-bottom: 50px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .button-group button {
-      padding: 18px 40px;
-      font-size: 18px;
-      border-radius: 8px;
-      border: 2px solid white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .primary {
-      background-color: white;
-      color: #007bff;
-    }
-
-    .outlined {
-      background-color: transparent;
-      color: white;
-    }
-
-    .outlined:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .button-group button i {
-      margin-left: 10px;
-      font-size: 16px;
-    }
-
-    /* Stats */
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 100px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-icon {
-      font-size: 25px;
-      color: #a7f3d0;
-      margin-bottom: 10px;
-    }
-
-    .stat-value {
-      font-size: 35px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .stat-label {
-      font-size: 18px;
-      color: #e0f2fe;
-    }
-
-    .stat-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    /* Cards Section */
-    .card-header-gradient-1 {
-      background: linear-gradient(135deg, #4e54c8, #8f94fb);
-      height: 200px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-
-    .card-header-gradient-2 {
-      background: linear-gradient(135deg, #11998e, #38ef7d);
-      height: 200px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-
-    .badge-custom {
-      font-size: 0.7rem;
-      background-color: #f0f0f0;
-      color: #333;
-      border-radius: 5px;
-      margin: 2px;
-    }
-
-    .card {
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .section-title {
-      font-weight: 700;
-    }
-
-    .subtext {
-      color: #555;
-    }
-
-    .demo-link {
-      text-decoration: none;
-      color: #2c7be5;
-      font-weight: 500;
-    }
-
-    .demo-link i {
-      margin-right: 5px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-heading h1 {
-        font-size: 34px;
-      }
-
-      .hero-heading p {
-        font-size: 1rem;
-        padding: 0 10px;
-      }
-
-      .button-group {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .button-group button {
-        width: 100%;
-        max-width: 300px;
-        font-size: 16px;
-      }
-
-      .stats {
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px 10px;
-      }
-
-      .stat-value {
-        font-size: 28px;
-      }
-    }
-    .project-card {
-      border-radius: 0.75rem;
-      margin-top: 40px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      border: 1px solid #e5e5e5;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-header-gradient {
-      height: 120px;
-    }
-
-    .gradient-green {
-      background: linear-gradient(135deg, #00c851, #007e33);
-    }
-
-    .gradient-orange {
-      background: linear-gradient(135deg, #ff6a00, #ee0979);
-    }
-
-    .gradient-purple {
-      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-    }
-
-    .gradient-blue {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-    }
-
-    .tech-badge {
-      font-size: 0.75rem;
+      font-family: 'Poppins', sans-serif;
       background-color: #f8f9fa;
-      border-radius: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      padding-top: 70px; 
     }
 
-    .card-body {
-      padding: 1rem 1.25rem;
-    }
-
-    .card-footer a {
-      text-decoration: none;
-    }
-
-
-    .summary-box {
-      background: #fff;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    }
-
-    .competency-pill {
-      background-color: #f1f5f9;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: 600;
-      margin: 5px;
-      display: inline-block;
-    }
-
-    .certification i {
-      color: #00c389;
-      margin-right: 8px;
-    }
-
-    .download-box {
-      background: #f1f5ff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
-    }
-
-    .download-btn {
-      background: linear-gradient(90deg, #4f46e5, #9333ea);
-      color: white;
-      font-weight: 600;
-    }
-
-    .download-btn:hover {
-      opacity: 0.9;
-    }
-
-    .download-icon {
-      font-size: 40px;
-      background: linear-gradient(90deg, #4f46e5, #9333ea);
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
   </style>
 </head>
 <body>
-
+  
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">KAPISH RAWAT</div>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <div class="navbar-container">
+    <nav class="navbar">
+      <div class="logo">Kofi Wood</div>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Toggle Script -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = navMenu.querySelectorAll('a');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove('active');
+        }
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (
+          section.offsetTop - 80 <= scrollY &&
+          section.offsetTop + section.offsetHeight - 80 > scrollY
+        ) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
@@ -471,8 +142,8 @@
   <section id="projects" class="about py-5 bg-light">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="section-title">Featured AI Projects</h2>
-        <p class="subtext">Explore my portfolio of AI-driven solutions that combine cutting-edge technology<br>with user-centered design</p>
+        <h1 class="section-title fs-1">Featured AI Projects</h1>
+        <p class="subtext mt-3 fs-5">Explore my portfolio of AI-driven solutions that combine cutting-edge technology<br>with user-centered design</p>
       </div>
 
       <div class="row g-4">
@@ -610,7 +281,7 @@
   </div>
 </div>
 </section>
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" id="about">
   <div class="container">
     <div class="row align-items-stretch">
       
@@ -661,11 +332,11 @@
       <!-- Right Column: Tech Workspace -->
       <div class="col-md-6 d-flex">
         <div class="bg-gradient rounded-4 p-5 shadow-sm d-flex flex-column justify-content-between w-100" 
-             style="background: linear-gradient(to bottom right, #e3eafc, #cfdfff); height: 420px;">
+             style="background: #E0E7FF; height: 420px;">
           
-         <div class="flex-grow-1 d-flex justify-content-center align-items-center flex-column">
+         <div class="flex-grow-1 d-flex justify-content-center align-items-center flex-column mt-5">
       <i class="fas fa-building fa-3x text-primary mb-3"></i>
-      <h5 class="text-primary text-center">Modern Tech Workspace</h5>
+      <h5 class="text-primary text-center ">Modern Tech Workspace</h5>
     </div>
 <!-- Education Card Aligned Bottom, Shifted Left -->
 <div class="bg-white p-3 rounded shadow d-inline-block mt-4 align-self-start"
@@ -688,10 +359,10 @@
 </section>
 
 <!-- Projects Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" id="resume">
   <div class="container text-center">
-    <h2 class="fw-bold mb-2">Projects & Highlights</h2>
-    <p class="text-muted mb-4">Showcasing key AI/ML initiatives and leadership achievements</p>
+    <h2 class="fw-bold mb-2 fs-1">Projects & Highlights</h2>
+    <p class="text-muted mb-4 fs-5">Showcasing key AI/ML initiatives and leadership achievements</p>
 
     <div class="row justify-content-center g-4 mb-5">
       <!-- Card 1 -->
@@ -793,9 +464,9 @@
   </div>
 </section>
 <!-- Technical Expertise Section -->
-<section class="container my-5">
-  <h2 class="text-center fw-bold mb-2">Technical Expertise</h2>
-  <p class="text-center mb-5 mt-4">
+<section class="container my-5" id="skills">
+  <h2 class="text-center fw-bold mb-2 fs-1">Technical Expertise</h2>
+  <p class="text-center mb-5 mt-4 fs-5">
     Comprehensive skill set spanning AI/ML, product management, and user experience design
   </p>
 
@@ -896,8 +567,8 @@
 
 <section style="background-color: whitesmoke; padding: 40px 0;  margin-top: 80px;">
   <div class="container">
-    <h2 class="text-center fw-bold mb-2 mt-2">Professional Experience</h2>
-    <p class="text-center text-muted mb-5 mt-4">
+    <h2 class="text-center fw-bold mb-2 mt-2 fs-1">Professional Experience</h2>
+    <p class="text-center text-muted mb-5 mt-4 fs-5">
       Leading AI innovation at Arizona State University and founding impactful AI solutions
     </p>
     <div class="row justify-content-center g-4 mt-5">
@@ -919,22 +590,22 @@
           </div>
           <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Led launch and iteration of GenAI pilots for ASU's CreateAI platform serving 200,000+ users</p>
+  <p class="mb-0 fs-7">Led launch and iteration of GenAI pilots for ASU's CreateAI platform serving 200,000+ users</p>
   
 </div>
 <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Designed and evaluated Retrieval-Augmented Generation (RAG) pipelines to optimize data integration</p>
+  <p class="mb-0 fs-7">Designed and evaluated Retrieval-Augmented Generation (RAG) pipelines to optimize data integration</p>
   
 </div>
 <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Provided data-driven recommendations for GenAI architecture and fine-tuning improvements</p>
+  <p class="mb-0 fs-7">Provided data-driven recommendations for GenAI architecture and fine-tuning improvements</p>
   
 </div>
 <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Supported Medical School AI Avatar development and performance optimization</p>
+  <p class="mb-0 fs-7">Supported Medical School AI Avatar development and performance optimization</p>
   
 </div>
         </div>
@@ -957,22 +628,22 @@
           </div>
           <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Founded and led development of 5 innovative AI products from concept to launch</p>
+  <p class="mb-0 fs-7">Founded and led development of 5 innovative AI products from concept to launch</p>
   
 </div>
 <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Built Enlighten platform supporting 500K+ international students with AI-powered learning</p>
+  <p class="mb-0 fs-7">Built Enlighten platform supporting 500K+ international students with AI-powered learning</p>
   
 </div>
 <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Managed end-to-end product lifecycle from UX research to technical implementation</p>
+  <p class="mb-0 fs-7">Managed end-to-end product lifecycle from UX research to technical implementation</p>
   
 </div>
 <div class="d-flex mb-2">
   <i class="fas fa-check-circle text-success me-2 mt-1"></i>
-  <p class="mb-0 small">Led cross-functional teams across design, engineering, and data science</p>
+  <p class="mb-0 fs-7">Led cross-functional teams across design, engineering, and data science</p>
   
 </div>
         </div>
@@ -981,14 +652,14 @@
     </div>
   </div>
 </section>
-<section style="background: linear-gradient(135deg, #1e90ff, #20c997); padding: 60px 0;">
+<section style="background: linear-gradient(135deg, #1e90ff, #20c997); padding: 60px 0;", id="contact">
   <div class="container text-white">
     <div class="text-center mb-2">
       <h2 class="fw-bold">Let's Build Something Amazing</h2>
       
     </div>
     <div class="mx-auto" style="max-width: 600px;">
-  <p class="lead text-center">
+  <p class="lead text-center" style="font-size: 1.2rem; margin-top: 30px;">
     Ready to discuss AI product opportunities or collaboration? I'm always excited to explore innovative projects.
   </p>
 </div>
@@ -1060,6 +731,46 @@
     </div>
   </div>
 </section>
+<footer class="text-light py-5" style="background-color: #0B1220;">
+  <div class="container">
+    <div class="row">
+      <!-- Column 1: Name + Description -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-primary fw-semibold">Kofi Wood</h5>
+        <p class="small text-light-emphasis">
+          AI Product Manager & UX Specialist building impactful, user-centered solutions that scale.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-semibold mb-3">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-light text-decoration-none">Projects</a></li>
+          <li><a href="#" class="text-light text-decoration-none">About</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Skills</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact -->
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-semibold mb-3">Connect</h6>
+        <p class="mb-1 small">kobowood1@gmail.com</p>
+        <p class="mb-0 small">+1 (646) 732-4171</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="border-secondary" />
+
+    <!-- Copyright -->
+    <div class="text-center small text-secondary">
+      © 2024 Kofi Wood. All rights reserved. | AI Product Manager & UX Specialist
+    </div>
+  </div>
+</footer>
+
 
 
 
@@ -1067,7 +778,8 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Font Awesome for icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>
