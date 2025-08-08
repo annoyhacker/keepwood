@@ -16,12 +16,14 @@
       border-bottom: 1px solid #e0e0e0;
     }
 
-    .navbar {
+    .navbar {                             
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 20px;
+      padding: 5px 20px;
+      
     }
+
 
     .logo {
       font-size: 1.4rem;
@@ -106,13 +108,19 @@
     }
 
     .spacer {
-      height: 70px;
+      height: 50px;
     }
 
     section {
       padding: 100px 20px;
     }
-
+.download-btn {
+    font-size: 1.5rem; /* Increase font size */
+    justify-content: center; /* Center icon + text */
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
     /* Hero Section */
     .hero {
       display: flex;
@@ -442,6 +450,36 @@
     footer a:hover {
   color: #0d6efd;
 }
+.call-btn {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.call-btn .call-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.call-btn .btn-text {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  transition: max-width 0.4s ease, opacity 0.4s ease;
+}
+
+.call-btn:hover .btn-text {
+  max-width: 100px; /* Adjust to fit text */
+  opacity: 1;
+}
+
+.call-btn:hover .call-icon {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
 section {
   scroll-margin-top: 80px; /* Adjust based on navbar height */
 }
